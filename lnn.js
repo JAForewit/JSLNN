@@ -77,13 +77,13 @@ function feedforward(inputs) {
                 //add aneuron to queue if qualified
                 if (axon.n.inCount == axon.n.inputs.length) {
                     queue.push(axon.n);
-                    console.log("added " + axon.n.id + " to queue");
+                    console.log("Q+ " + axon.n.id);
                 }
             }
 
             //remove neuron from queue
             queue.splice(i, 1);
-            console.log("removed " + n.id + " from queue");
+            console.log("Q- " + n.id);
         }
     }
 }
