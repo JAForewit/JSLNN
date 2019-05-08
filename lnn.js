@@ -2,33 +2,26 @@
 
 var MAX_WEIGHT = 1, MIN_WEIGHT = -1;
 
+var inSize = 1;
+var outSize = 2;
+
 var net = [
-    {
-        output: rand(MAX_WEIGHT, MIN_WEIGHT),
-        axons: [1, 2, 4]
-    },
-    {
-        output: rand(MAX_WEIGHT, MIN_WEIGHT),
-        axons: [2, 3, 4, 5]
-    },
-    {
-        output: rand(MAX_WEIGHT, MIN_WEIGHT),
-        axons: [3, 4]
-    },
-    {
-        output: rand(MAX_WEIGHT, MIN_WEIGHT),
-        axons: [5]
-    },
-    {
-        output: rand(MAX_WEIGHT, MIN_WEIGHT)
-    },
-    {
-        output: rand(MAX_WEIGHT, MIN_WEIGHT)
-    },
+    0, [1, rand(MAX_WEIGHT, MIN_WEIGHT),
+        2, rand(MAX_WEIGHT, MIN_WEIGHT),
+        4, rand(MAX_WEIGHT, MIN_WEIGHT)],
+    0, [2, rand(MAX_WEIGHT, MIN_WEIGHT),
+        3, rand(MAX_WEIGHT, MIN_WEIGHT),
+        4, rand(MAX_WEIGHT, MIN_WEIGHT),
+        5, rand(MAX_WEIGHT, MIN_WEIGHT)],
+    0, [3, rand(MAX_WEIGHT, MIN_WEIGHT),
+        4, rand(MAX_WEIGHT, MIN_WEIGHT)],
+    0, [5, rand(MAX_WEIGHT, MIN_WEIGHT),],
+    0, [],
+    0, []
 ];
 
 function rand(max, min) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.random() * (max - min) + min;
 }
 
 function init() {
