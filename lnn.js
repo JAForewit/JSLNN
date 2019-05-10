@@ -77,16 +77,22 @@ function feedforward(inputs) {
                 //add aneuron to queue if qualified
                 if (axon.n.inCount == axon.n.inputs.length) {
                     queue.push(axon.n);
-                    console.log("Q+ " + axon.n.id);
+                    console.log("q+ " + axon.n.id);
                 }
             }
 
             //remove neuron from queue
             queue.splice(i, 1);
-            console.log("Q- " + n.id);
+            console.log("q- " + n.id);
         }
     }
 }
+
+/* Backpropagation:
+axons.length replaces inCount
+inputs is cleared and filled with 'reverse' outputs
+*/
+
 
 
 function init() {
